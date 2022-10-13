@@ -6,7 +6,7 @@
 /*   By: gio </var/spool/mail/gio>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:07:59 by gio               #+#    #+#             */
-/*   Updated: 2022/10/13 15:28:52 by gio              ###   ########.fr       */
+/*   Updated: 2022/10/13 17:13:24 by gio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ void	ft_print_reverse_alphabet(void)
 		ch--;
 	}
 }
-/*
+
 int	main(void)
 {
 	ft_print_reverse_alphabet();
 }
-*/
