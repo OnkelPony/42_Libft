@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gio </var/spool/mail/gio>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 15:24:12 by gio               #+#    #+#             */
-/*   Updated: 2022/10/13 15:26:42 by gio              ###   ########.fr       */
+/*   Created: 2022/10/13 15:07:59 by gio               #+#    #+#             */
+/*   Updated: 2022/10/13 15:28:52 by gio              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
 	char	ch;
 
-	ch = 'a';
-	while (ch <= 'z')
+	ch = 'z';
+	while (ch >= 'a')
 	{
 		write(1, &ch, 1);
-		ch++;
+		ch--;
 	}
 }
 /*
 int	main(void)
 {
-	ft_print_alphabet();
+	ft_print_reverse_alphabet();
 }
 */
