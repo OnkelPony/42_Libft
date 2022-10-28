@@ -1,0 +1,28 @@
+# Ignore all
+*
+
+# Unignore directories
+!*/
+
+# Unignore .gitignore
+!.gitignore
+
+# Unignore .c files
+!*.c
+
+# Ignore binaries etc.
+.vscode/
+a.out
+main
+
+# Ignore files being edited
+*~
+*.swp
+
+#  Ignore make and build files
+*.lst
+*.o
+*.eep
+*.lss
+*.map
+*.sym
