@@ -21,7 +21,7 @@ all: $(NAME)
 $(NAME): $(OBJFILES)
 	ar rc libft.a *.o
 
-# # Define a pattern rule that compiles every .c file into a .o file
+# Define a pattern rule that compiles every .c file into a .o file
 %.o : %.c
 	$(CC) -c $(CFLAGS)  $< -o $@
 
