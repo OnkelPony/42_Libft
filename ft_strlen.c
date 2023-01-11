@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimartin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:44:03 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/09 16:44:07 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:55:54 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

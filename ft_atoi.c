@@ -6,11 +6,12 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:43:28 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/11 13:59:04 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/11 14:55:28 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
+#include "libft.h"
 
 static char	*proc_space(char *str)
 {

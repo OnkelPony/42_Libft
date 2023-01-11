@@ -13,5 +13,15 @@
         "command": "cc -c -Wall -Wextra -Werror  ft_isalpha.c -o ft_isalpha.o",
         "directory": "/home/gio/git/42school",
         "file": "/home/gio/git/42school/ft_isalpha.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_isalnum.c -o ft_isalnum.o",
+        "directory": "/home/gio/git/42school",
+        "file": "/home/gio/git/42school/ft_isalnum.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_isdigit.c -o ft_isdigit.o",
+        "directory": "/home/gio/git/42school",
+        "file": "/home/gio/git/42school/ft_isdigit.c"
     }
 ]
