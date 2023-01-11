@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 14:26:23 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/11 14:55:37 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/11 15:43:03 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalnum(int c)
 {
-	return ()
+	return (ft_isalpha(c) || ft_isdigit(c));
 }

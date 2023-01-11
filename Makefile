@@ -6,7 +6,7 @@
 #    By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:16:40 by jimartin          #+#    #+#              #
-#    Updated: 2023/01/11 14:25:54 by jimartin         ###   ########.fr        #
+#    Updated: 2023/01/11 15:47:31 by jimartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJFILES = ft_atoi.o ft_isalnum.o ft_isalpha.o ft_isdigit.o ft_strlen.o
 
 all: $(NAME)
 
-$(NAME): $(OBJFILES)
+$(NAME): $(OBJFILES) libft.h
 	ar rc libft.a *.o
 
 # Define a pattern rule that compiles every .c file into a .o file
