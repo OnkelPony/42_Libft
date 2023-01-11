@@ -1,0 +1,17 @@
+[
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_atoi.c -o ft_atoi.o",
+        "directory": "/home/gio/git/42school",
+        "file": "/home/gio/git/42school/ft_atoi.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_strlen.c -o ft_strlen.o",
+        "directory": "/home/gio/git/42school",
+        "file": "/home/gio/git/42school/ft_strlen.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_isalpha.c -o ft_isalpha.o",
+        "directory": "/home/gio/git/42school",
+        "file": "/home/gio/git/42school/ft_isalpha.c"
+    }
+]

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: gio <gio@student.42.fr>                    +#+  +:+       +#+         #
+#    By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:16:40 by jimartin          #+#    #+#              #
-#    Updated: 2023/01/11 13:36:56 by gio              ###   ########.fr        #
+#    Updated: 2023/01/11 14:22:25 by jimartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CCC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 OBJNAME = libft.o
-OBJFILES = ft_atoi.o ft_isalpha.o ft_strlen.o
+OBJFILES = ft_atoi.o ft_isalpha.o ft_isdigit.o ft_strlen.o
 
 all: $(NAME)
 

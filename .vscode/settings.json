@@ -1,1 +1,4 @@
-{"makefile.compileCommandsPath": ".vscode/compile_commands.json"}
+{
+	"makefile.compileCommandsPath": ".vscode/compile_commands.json",
+	"sonarlint.pathToCompileCommands": "${workspaceFolder}/.vscode/compile_commands.json"
+}

@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimartin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:43:28 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/09 16:43:35 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:59:04 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
 
-char	*proc_space(char *str)
+static char	*proc_space(char *str)
 {
 	while ((*str >= 9 && *str <= 13) || *str == ' ')
 		str++;
 	return (str);
 }
 
-long	count_div(char *str)
+static long	count_div(char *str)
 {
 	long	div;
 
@@ -32,7 +32,7 @@ long	count_div(char *str)
 	return (div / 10);
 }
 
-int	to_integer(char *str)
+static int	to_integer(char *str)
 {
 	long	div;
 	int		result;
@@ -66,7 +66,6 @@ int	ft_atoi(char *str)
 	int		result;
 	char	*spaceless;
 
-	result = 0;
 	spaceless = proc_space(str);
 	result = to_integer(spaceless);
 	return (result);
