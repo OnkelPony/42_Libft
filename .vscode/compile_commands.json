@@ -43,5 +43,15 @@
         "command": "cc -c -Wall -Wextra -Werror  ft_memset.c -o ft_memset.o",
         "directory": "/nfs/homes/jimartin/git/core/Libft",
         "file": "/nfs/homes/jimartin/git/core/Libft/ft_memset.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_bzero.c -o ft_bzero.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_bzero.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_memcpy.c -o ft_memcpy.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_memcpy.c"
     }
 ]
