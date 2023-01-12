@@ -6,18 +6,18 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:44:03 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/11 14:55:54 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/12 14:27:29 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (*str != '\0')
+	while (*str)
 	{
 		str++;
 		i++;

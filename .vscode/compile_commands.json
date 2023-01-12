@@ -28,5 +28,20 @@
         "command": "cc -c -Wall -Wextra -Werror  ft_isdigit.c -o ft_isdigit.o",
         "directory": "/nfs/homes/jimartin/git/core/Libft",
         "file": "/nfs/homes/jimartin/git/core/Libft/ft_isdigit.c"
+    },
+    {
+        "command": "cc -Wall -Wextra -Werror -o main main.c -L. -lft",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/main.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_isprint.c -o ft_isprint.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_isprint.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_memset.c -o ft_memset.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_memset.c"
     }
 ]

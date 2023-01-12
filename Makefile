@@ -6,7 +6,7 @@
 #    By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:16:40 by jimartin          #+#    #+#              #
-#    Updated: 2023/01/11 15:47:31 by jimartin         ###   ########.fr        #
+#    Updated: 2023/01/12 14:36:15 by jimartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,12 @@ CCC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 OBJNAME = libft.o
-OBJFILES = ft_atoi.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_strlen.o
+OBJFILES = ft_atoi.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_memset.o ft_strlen.o
+
+# REMOVE THIS!!! 
+bin: re main.c
+	$(CC) $(CFLAGS) -o main main.c -L. -lft
+# REMOVE THIS!!! 
 
 all: $(NAME)
 
