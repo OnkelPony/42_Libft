@@ -1,27 +1,32 @@
 [
     {
         "command": "cc -c -Wall -Wextra -Werror  ft_atoi.c -o ft_atoi.o",
-        "directory": "/home/gio/git/42school",
-        "file": "/home/gio/git/42school/ft_atoi.c"
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_atoi.c"
     },
     {
         "command": "cc -c -Wall -Wextra -Werror  ft_strlen.c -o ft_strlen.o",
-        "directory": "/home/gio/git/42school",
-        "file": "/home/gio/git/42school/ft_strlen.c"
-    },
-    {
-        "command": "cc -c -Wall -Wextra -Werror  ft_isalpha.c -o ft_isalpha.o",
-        "directory": "/home/gio/git/42school",
-        "file": "/home/gio/git/42school/ft_isalpha.c"
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_strlen.c"
     },
     {
         "command": "cc -c -Wall -Wextra -Werror  ft_isalnum.c -o ft_isalnum.o",
-        "directory": "/home/gio/git/42school",
-        "file": "/home/gio/git/42school/ft_isalnum.c"
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_isalnum.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_isalpha.c -o ft_isalpha.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_isalpha.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_isascii.c -o ft_isascii.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_isascii.c"
     },
     {
         "command": "cc -c -Wall -Wextra -Werror  ft_isdigit.c -o ft_isdigit.o",
-        "directory": "/home/gio/git/42school",
-        "file": "/home/gio/git/42school/ft_isdigit.c"
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_isdigit.c"
     }
 ]

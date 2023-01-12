@@ -14,7 +14,7 @@ CCC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 OBJNAME = libft.o
-OBJFILES = ft_atoi.o ft_isalnum.o ft_isalpha.o ft_isdigit.o ft_strlen.o
+OBJFILES = ft_atoi.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_strlen.o
 
 all: $(NAME)
 
