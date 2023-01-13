@@ -58,5 +58,25 @@
         "command": "cc -Wall -Wextra -Werror -o main main.c -L. -lft",
         "directory": "/nfs/homes/jimartin/git/core/Libft",
         "file": "/nfs/homes/jimartin/git/core/Libft/main.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_tolower.c -o ft_tolower.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_tolower.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_toupper.c -o ft_toupper.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_toupper.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_strchr.c -o ft_strchr.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_strchr.c"
+    },
+    {
+        "command": "cc -c -Wall -Wextra -Werror  ft_strrchr.c -o ft_strrchr.o",
+        "directory": "/nfs/homes/jimartin/git/core/Libft",
+        "file": "/nfs/homes/jimartin/git/core/Libft/ft_strrchr.c"
     }
 ]

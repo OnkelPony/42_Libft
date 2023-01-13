@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/12 14:34:15 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:32:46 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,24 @@ int main()
 	printf("os_strlen(\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\") should be %ld and is %ld\n", 57ul, strlen("Lorem ipsum dolor sit amet, consectetuer adipiscing elit."));
 	printf("\n");
 	
-	//02
-	/*
-	int min = 5;
-	int max = 10;
-	int i = 0;
-	int range;
-	int *num;
-	range = ft_ultimate_range(&num, min, max);
-	while (i < range)
-	{
-		printf("%d", num[i]);
-		i++;
-	}
-	*/
+	//ft_strchr
+	printf("*** ft_strchr ***\n");
+	printf("ft_strchr(\"nesnese\", 'n') shoud be %s and is %s\n", "nesnese", ft_strchr("nesnese", 'n'));
+	printf("os_strchr(\"nesnese\", 'n') shoud be %s and is %s\n", "nesnese", strchr("nesnese", 'n'));
+	printf("os_strchr(\"bonjour\", 'j') shoud be %s and is %s\n", "jour", strchr("bonjour", 'j'));
+	printf("ft_strchr(\"bonjour\", 'j') shoud be %s and is %s\n", "jour", ft_strchr("bonjour", 'j'));
+	printf("\n");
+
+	//ft_strrchr
+	printf("*** ft_strrchr ***\n");
+	printf("os_strrchr(\"nesnese\", 'n') shoud be %s and is %s\n", "nese", strrchr("nesnese", 'n'));
+	printf("ft_strrchr(\"nesnese\", 'n') shoud be %s and is %s\n", "nese", ft_strrchr("nesnese", 'n'));
+	printf("os_strrchr(\"bonjour\", 'n') shoud be %s and is %s\n", "bonjour", strrchr("bonjour", 'b'));
+	printf("ft_strrchr(\"bonjour\", 'n') shoud be %s and is %s\n", "bonjour", ft_strrchr("bonjour", 'b'));
+	printf("os_strrchr(\"bonjour\", 's') shoud be %s and is %p\n", "bonjour", strrchr("bonjour", 's'));
+	printf("ft_strrchr(\"bonjour\", 's') shoud be %s and is %s\n", "bonjour", ft_strrchr("bonjour", 's'));
+	printf("\n");
+	
 	//03
 	/*
 	char	*sep;
