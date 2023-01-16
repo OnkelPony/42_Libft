@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:48:46 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/13 17:57:48 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:59:25 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
-	while (*(s + i) != (char)c)
+	while (*s != (char)c)
 	{
-		if (!*(s+i))
+		if (!*s++)
 		{
 			return (NULL);
 		}
-		i++;
 	}
-	return ((char *)(s + i));
+	return ((char *)s);
 }

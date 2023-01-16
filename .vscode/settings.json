@@ -1,11 +1,17 @@
 {
 	"[c]": {
-        "editor.defaultFormatter": "keyhr.42-c-format"
+		"editor.defaultFormatter": "keyhr.42-c-format"
 	},
-	"makefile.compileCommandsPath": ".vscode/compile_commands.json",
-	"sonarlint.pathToCompileCommands": "${workspaceFolder}/.vscode/compile_commands.json",
 	"files.associations": {
 		"ctype.h": "c",
 		"libft.h": "c"
-	}
+	},
+	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/nfs/homes/jimartin/git/core/Libft",
+			"binaryPath": "/nfs/homes/jimartin/git/core/Libft/main",
+			"binaryArgs": []
+		}
+	]
 }

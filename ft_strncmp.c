@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/13 15:48:46 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/16 12:58:39 by jimartin         ###   ########.fr       */
+/*   Created: 2023/01/16 13:02:05 by jimartin          #+#    #+#             */
+/*   Updated: 2023/01/16 18:27:21 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	abs_c(char c)
 {
-	int	i;
+	if (c < 0)
+	{
+		return ((int) -c);
+	}
+	return (c);
+}
 
-	i = 0;
-	if (!ft_strchr(s, c))
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 1;
+	if (n == 0)
 	{
-		return (NULL);
+		return (0);
 	}
-	while (*(s + i))
+	while (*s1 == *s2 && i++ < n)
 	{
-		i++;
+		s1++;
+		s2++;
 	}
-	i--;
-	while (*(s + i) != (char)c)
-	{
-		if (!*(s + i) || i < 0)
-		{
-			return (NULL);
-		}
-		i--;
-	}
-	return ((char *)(s + i));
+	return (abs_c(*s1) - abs_c(*s2));
 }

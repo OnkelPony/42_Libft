@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/13 18:32:46 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/16 17:51:34 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,29 +54,21 @@ int main()
 	printf("*** ft_strrchr ***\n");
 	printf("os_strrchr(\"nesnese\", 'n') shoud be %s and is %s\n", "nese", strrchr("nesnese", 'n'));
 	printf("ft_strrchr(\"nesnese\", 'n') shoud be %s and is %s\n", "nese", ft_strrchr("nesnese", 'n'));
-	printf("os_strrchr(\"bonjour\", 'n') shoud be %s and is %s\n", "bonjour", strrchr("bonjour", 'b'));
-	printf("ft_strrchr(\"bonjour\", 'n') shoud be %s and is %s\n", "bonjour", ft_strrchr("bonjour", 'b'));
+	printf("os_strrchr(\"bonjour\", 'b') shoud be %s and is %s\n", "bonjour", strrchr("bonjour", 'b'));
+	printf("ft_strrchr(\"bonjour\", 'b') shoud be %s and is %s\n", "bonjour", ft_strrchr("bonjour", 'b'));
 	printf("os_strrchr(\"bonjour\", 's') shoud be %s and is %p\n", "bonjour", strrchr("bonjour", 's'));
 	printf("ft_strrchr(\"bonjour\", 's') shoud be %s and is %s\n", "bonjour", ft_strrchr("bonjour", 's'));
 	printf("\n");
 	
-	//03
-	/*
-	char	*sep;
-	char	*res;
-	int	size;
-	size = 3;
-	char	*strs[size];
+	//ft_strncmp
+	printf("*** ft_strncmp ***\n");
+	printf("os_strncmp(\"abcdefgh\", \"abcdwxyz\", 4) shoud be %d and is %d\n", 0, strncmp("abcdefgh", "abcdwxyz", 4));
+	printf("ft_strncmp(\"abcdefgh\", \"abcdwxyz\", 4) shoud be %d and is %d\n", 0, ft_strncmp("abcdefgh", "abcdwxyz", 4));
+	printf("os_strncmp(\"test\\201\", \"test\\0\", 6) shoud be %d and is %d\n", 1, strncmp("test\201", "test\0", 6));
+	printf("ft_strncmp(\"test\\201\", \"test\\0\", 6) shoud be %d and is %d\n", 1, ft_strncmp("test\201", "test\0", 6));
+	
+	printf("\n");
 
-	strs[0] = "Hello";
-	strs[1] = "world";
-	strs[2] = "malloc is not fun";
-
-	sep = " ";
-	res = ft_strjoin(size, strs, sep);
-	printf("%s\n", res);
-	free(res);
-	*/
 	//04 Error 404 not found
 	//05 Error 404 not found
 	return 0;
