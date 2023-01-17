@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 16:08:30 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:17:37 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@
 //#include "ex02/ft_ultimate_range.c"
 //#include "ex03/ft_strjoin.c"
 //#include "ex04/ft_convert_base.c"
+
+void    ft_print_result(char const *s)
+{
+        int             len;
+
+        len = 0;
+        while (s[len])
+                len++;
+        write(1, s, len);
+}
 
 int main()
 {
@@ -76,6 +86,24 @@ int main()
 	//ft_substr
 	printf("*** ft_substr ***\n");
 	printf("ft_substr(\"lorem ipsum dolor sit amet\", \"ipsumm\", 30) should be %s and is %s\n", "lorem ipsu", ft_substr("lorem ipsum dolor sit amet", 0, 10));
+	printf("\n");
+	
+	//ft_split
+	printf("*** ft_split ***\n");
+	char **tabstr;
+	int i;
+	if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
+		{printf("qqqqqq\n");
+                        ft_print_result("NULL");}
+                else
+                {
+                        while (tabstr[i] != NULL)
+                        {
+                                ft_print_result(tabstr[i]);
+                                write(1, "\n", 1);
+                                i++;
+                        }
+                }	
 	printf("\n");
 	return 0;
 }
