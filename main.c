@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 14:19:46 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:08:30 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,11 @@ int main()
 	printf("*** ft_strnstr ***\n");
 	printf("ft_strnstr(\"lorem ipsum dolor sit amet\", \"ipsumm\", 30) should be %p and is %p\n", NULL, ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", 30));
 	printf("\n");
-	//05 Error 404 not found
+	
+	//ft_substr
+	printf("*** ft_substr ***\n");
+	printf("ft_substr(\"lorem ipsum dolor sit amet\", \"ipsumm\", 30) should be %s and is %s\n", "lorem ipsu", ft_substr("lorem ipsum dolor sit amet", 0, 10));
+	printf("\n");
 	return 0;
 }
 
