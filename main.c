@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/16 17:51:34 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/17 14:19:46 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,12 @@ int main()
 	printf("ft_strncmp(\"abcdefgh\", \"abcdwxyz\", 4) shoud be %d and is %d\n", 0, ft_strncmp("abcdefgh", "abcdwxyz", 4));
 	printf("os_strncmp(\"test\\201\", \"test\\0\", 6) shoud be %d and is %d\n", 1, strncmp("test\201", "test\0", 6));
 	printf("ft_strncmp(\"test\\201\", \"test\\0\", 6) shoud be %d and is %d\n", 1, ft_strncmp("test\201", "test\0", 6));
-	
 	printf("\n");
 
-	//04 Error 404 not found
+	//ft_strnstr
+	printf("*** ft_strnstr ***\n");
+	printf("ft_strnstr(\"lorem ipsum dolor sit amet\", \"ipsumm\", 30) should be %p and is %p\n", NULL, ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", 30));
+	printf("\n");
 	//05 Error 404 not found
 	return 0;
 }

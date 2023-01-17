@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:01:56 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 12:30:40 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:51:18 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdbool.h>
 
 int		ft_atoi(char *str);
 void	ft_bzero(void *s, size_t n);
@@ -31,6 +32,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
