@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 15:21:17 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 16:41:45 by jimartin         ###   ########.fr       */
+/*   Created: 2023/01/17 16:28:49 by jimartin          #+#    #+#             */
+/*   Updated: 2023/01/17 16:46:36 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*substr;
-	char	*p_substr;
-	size_t	i;
+	char	*result;
+	char	*p_result;
 
-	s += start;
-	p_substr = malloc(sizeof(*p_substr) * (len + 1));
-	if (p_substr == NULL)
+	result = malloc(sizeof(*result) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (result == NULL)
 	{
 		return (NULL);
 	}
-	substr = p_substr;
-	i = 0;
-	while (*s && ++i <= len)
+	p_result = result;
+	while (*s1)
 	{
-		*p_substr++ = *s++;
+		*p_result++ = *s1++;
 	}
-	*p_substr = '\0';
-	return (substr);
+	while (*s2)
+	{
+		*p_result++ = *s2++;
+	}
+	*p_result = '\0';
+	return (result);
 }
