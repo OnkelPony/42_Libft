@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 13:02:05 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 12:50:18 by jimartin         ###   ########.fr       */
+/*   Created: 2023/01/17 12:28:57 by jimartin          #+#    #+#             */
+/*   Updated: 2023/01/17 12:52:53 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	abs_c(char c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c < 0)
-	{
-		return ((int) -c);
-	}
-	return (c);
-}
+	const unsigned char	*p_s1;
+	const unsigned char	*p_s2;
+	size_t				i;
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
+	p_s1 = s1;
+	p_s2 = s2;
 	i = 0;
 	if (n == 0)
 	{
 		return (0);
 	}
-	while (*s1 == *s2 && ++i < n)
+	while (*p_s1 == *p_s2 && ++i < n)
 	{
-		s1++;
-		s2++;
+		p_s1++;
+		p_s2++;
 	}
-	return (abs_c(*s1) - abs_c(*s2));
+	return ((*p_s1) - (*p_s2));
 }
