@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 18:36:13 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 19:05:50 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/18 19:33:14 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,37 @@
 char	**ft_split(char const *s, char c)
 {
 	char	**splitted;
-	char	*member;
+	char	**p_splitted;
+	int		length;
+	int		count;
+	int		i;
+	int		j;
 
-	splitted = malloc(sizeof(**splitted) * (ft_strlen(s) + 1));
-	if (splitted == NULL)
+	length = 0;
+	count = 0;
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		return (NULL);
+		if (s[i] == c)
+			count++;
+		length++;
+		i++;
 	}
-	member = malloc(sizeof(*member) * (ft_strlen(s) + 1));
-	if (member == NULL)
+	// i = 0;
+	splitted = malloc(sizeof(char *) * (count + 1));
+	p_splitted = splitted;
+	for (i = 0; i < (count + 1); i++)
 	{
-		return (NULL);
+		j = 0;
+		while (s[j] != c)
+			j++;
+		j++;
+		splitted[i] = malloc(sizeof(char) * j);
+		ft_memcpy(splitted[i], s, (j - 1));
+		splitted[i][j - 1] = '\0';
+		s += j;
 	}
-	while (*s)
-	{
-		if (*s != c)
-		{
-			*member++ = *s++;
-		}
-		else
-		{
-			*member = '\0';
-			*splitted++ = member;
-		}
-	}
-	return (splitted);
+	// *splitted = '\0';
+	return (p_splitted);
 }

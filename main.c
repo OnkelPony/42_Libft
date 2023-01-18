@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 19:17:37 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/18 19:21:22 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 #include <ctype.h>
 
 #include "libft.h"
-//#include "ex01/ft_range.c"
-//#include "ex02/ft_ultimate_range.c"
-//#include "ex03/ft_strjoin.c"
-//#include "ex04/ft_convert_base.c"
 
 void    ft_print_result(char const *s)
 {
@@ -51,7 +47,7 @@ int main()
 	printf("ft_strlen(\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\") should be %ld and is %ld\n", 57ul, ft_strlen("Lorem ipsum dolor sit amet, consectetuer adipiscing elit."));
 	printf("os_strlen(\"Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\") should be %ld and is %ld\n", 57ul, strlen("Lorem ipsum dolor sit amet, consectetuer adipiscing elit."));
 	printf("\n");
-	
+
 	//ft_strchr
 	printf("*** ft_strchr ***\n");
 	printf("ft_strchr(\"nesnese\", 'n') shoud be %s and is %s\n", "nesnese", ft_strchr("nesnese", 'n'));
@@ -69,7 +65,7 @@ int main()
 	printf("os_strrchr(\"bonjour\", 's') shoud be %s and is %p\n", "bonjour", strrchr("bonjour", 's'));
 	printf("ft_strrchr(\"bonjour\", 's') shoud be %s and is %s\n", "bonjour", ft_strrchr("bonjour", 's'));
 	printf("\n");
-	
+
 	//ft_strncmp
 	printf("*** ft_strncmp ***\n");
 	printf("os_strncmp(\"abcdefgh\", \"abcdwxyz\", 4) shoud be %d and is %d\n", 0, strncmp("abcdefgh", "abcdwxyz", 4));
@@ -82,12 +78,12 @@ int main()
 	printf("*** ft_strnstr ***\n");
 	printf("ft_strnstr(\"lorem ipsum dolor sit amet\", \"ipsumm\", 30) should be %p and is %p\n", NULL, ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", 30));
 	printf("\n");
-	
+
 	//ft_substr
 	printf("*** ft_substr ***\n");
 	printf("ft_substr(\"lorem ipsum dolor sit amet\", \"ipsumm\", 30) should be %s and is %s\n", "lorem ipsu", ft_substr("lorem ipsum dolor sit amet", 0, 10));
 	printf("\n");
-	
+
 	//ft_split
 	printf("*** ft_split ***\n");
 	char **tabstr;
@@ -103,7 +99,7 @@ int main()
                                 write(1, "\n", 1);
                                 i++;
                         }
-                }	
+                }
 	printf("\n");
 	return 0;
 }
