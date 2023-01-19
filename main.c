@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/19 12:32:24 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:54:52 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,22 @@ int main()
 	i++;
 	}
 	printf("\n");
+
+	//ft_strlcpy
+	printf("*** ft_strlcpy ***\n");
+	char    *dest;
+
+	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
+			return (0);
+	memset(dest, 0, 15);
+	// memset(dest, 'r', 6);
+	printf("%ld\n", ft_strlcpy(dest, "lorem", 15));
+	write(1, "\n", 1);
+	write(1, dest, 15);
+	printf("\n");
+
 	return 0;
+
 }
 
 

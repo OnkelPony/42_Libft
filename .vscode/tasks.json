@@ -7,9 +7,11 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file} ${workspaceFolder}/libft.h",
+                "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+				"-L.",
+				"-lft"
             ],
             "options": {
                 "cwd": "${fileDirname}"

@@ -6,7 +6,7 @@
 #    By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:16:40 by jimartin          #+#    #+#              #
-#    Updated: 2023/01/17 18:37:15 by jimartin         ###   ########.fr        #
+#    Updated: 2023/01/19 15:06:49 by jimartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = libft.a
 OBJNAME = libft.o
 OBJFILES = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 ft_isdigit.o ft_isprint.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o \
-ft_memset.o ft_split.o ft_strchr.o ft_strjoin.o ft_strlen.o ft_strncmp.o \
+ft_memset.o ft_split.o ft_strchr.o ft_strjoin.o ft_strlcpy.o ft_strlen.o ft_strncmp.o \
 ft_strnstr.o \
 ft_strrchr.o ft_strtrim.o ft_substr.o \
 ft_tolower.o ft_toupper.o
