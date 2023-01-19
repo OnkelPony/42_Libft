@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/18 19:21:22 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:32:24 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@
 
 void    ft_print_result(char const *s)
 {
-        int             len;
+		int             len;
 
-        len = 0;
-        while (s[len])
-                len++;
-        write(1, s, len);
+		len = 0;
+		while (s[len])
+				len++;
+		write(1, s, len);
 }
 
 int main()
@@ -88,18 +88,14 @@ int main()
 	printf("*** ft_split ***\n");
 	char **tabstr;
 	int i;
-	if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
-		{printf("qqqqqq\n");
-                        ft_print_result("NULL");}
-                else
-                {
-                        while (tabstr[i] != NULL)
-                        {
-                                ft_print_result(tabstr[i]);
-                                write(1, "\n", 1);
-                                i++;
-                        }
-                }
+	i = 0;
+	tabstr = ft_split("_", '_');
+	while (tabstr[i] != NULL)
+	{
+		ft_print_result(tabstr[i]);
+		write(1, "\n", 1);
+	i++;
+	}
 	printf("\n");
 	return 0;
 }
