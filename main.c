@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/19 15:54:52 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:31:09 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int main()
 			return (0);
 	memset(dest, 0, 15);
 	// memset(dest, 'r', 6);
-	printf("%ld\n", ft_strlcpy(dest, "lorem", 15));
+	printf("%ld\n", ft_strlcpy(dest, "lorem ipsum dolor sit amet", 3));
 	write(1, "\n", 1);
 	write(1, dest, 15);
 	printf("\n");
