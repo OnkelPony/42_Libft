@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/20 16:31:09 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/21 17:23:22 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,27 @@ int main()
 	memset(dest, 0, 15);
 	// memset(dest, 'r', 6);
 	printf("%ld\n", ft_strlcpy(dest, "lorem ipsum dolor sit amet", 3));
+	write(1, "\n", 1);
+	write(1, dest, 15);
+	printf("\n");
+
+	//ft_strlcat
+	printf("*** ft_strlcat ***\n");
+	//char    *dest;
+
+	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
+			return (0);
+	memset(dest, 0, 15);
+	memset(dest, 'r', 6);
+	printf("ft_strlen(dest) = %ld\n", ft_strlen(dest));
+	printf("%ld\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 19));
+	write(1, dest, 15);
+	write(1, "\n", 1);
+	memset(dest, 0, 15);
+	memset(dest, 'r', 6);
+	dest[14] = 'a';
+	printf("ft_strlen(dest) = %ld\n", ft_strlen(dest));
+	printf("%ld\n",ft_strlcat(dest, "lorem ipsum dolor sit amet", 15));
 	write(1, "\n", 1);
 	write(1, dest, 15);
 	printf("\n");

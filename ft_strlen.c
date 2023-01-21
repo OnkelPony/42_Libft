@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:44:03 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 13:50:00 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/21 13:18:27 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	const char	*p_str;
 
-	i = 0;
-	while (*str++)
+	p_str = str;
+	while (*p_str)
 	{
-		i++;
+		p_str++;
 	}
-	return (i);
+	return (p_str - str);
 }
