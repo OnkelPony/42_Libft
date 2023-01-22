@@ -6,68 +6,55 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 16:43:28 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/11 14:55:28 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/22 17:22:51 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
 #include "libft.h"
 
-static char	*proc_space(char *str)
+static char	*proc_space(const char *str)
 {
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	return (str);
-}
+	const char *p_str;
 
-static long	count_div(char *str)
-{
-	long	div;
-
-	div = 1;
-	while (*str >= '0' && *str <= '9')
-	{
-		div *= 10;
-		str++;
-	}
-	return (div / 10);
+	p_str = str;
+	while ((*p_str >= 9 && *p_str <= 13) || *p_str == ' ')
+		p_str++;
+	return ((char *)p_str);
 }
 
 static int	to_integer(char *str)
 {
-	long	div;
 	int		result;
 	int		minuses;
+	int		signs;
 
 	result = 0;
 	minuses = 0;
+	signs = 0;
 	while (*str == '+' || *str == '-')
 	{
+		signs++;
 		if (*str == '-')
 			minuses++;
 		str++;
 	}
-	div = count_div(str);
+	if (signs > 1)
+	{
+		return (result);
+	}
 	while (*str >= '0' && *str <= '9')
 	{
-		if (div == 1)
-			result = -result - (div * (*str - 48));
-		else
-			result += (div * (*str - 48));
-		str++;
-		div /= 10;
+		result = result * 10 + (*str++ - '0');
 	}
-	if (minuses % 2 == 0)
+	if (minuses)
 		result = -result;
 	return (result);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
-	int		result;
 	char	*spaceless;
 
 	spaceless = proc_space(str);
-	result = to_integer(spaceless);
-	return (result);
+	return(to_integer(spaceless));
 }
