@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/23 13:41:26 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:30:31 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,13 @@ int main()
 	char *str;
 	str = (char *)ft_calloc(30, 1);
 	write(1, str, 30);
+
+	//ft_itoa
+	printf("*** ft_itoa ***\n");
+	char *res = ft_itoa(10);
+	// char *res = ft_itoa(-2147483648LL);
+	printf("res = %s\n", res);
+	free(res);
 	
 	return 0;
 
