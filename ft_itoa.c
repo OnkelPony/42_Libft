@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:56:59 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/23 17:37:48 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:06:41 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static int	ft_abs(int n)
 	return (n);
 }
 
-static int ft_count_len(int n)
+static int	ft_count_len(int n)
 {
-	int		length;
-	
+	int	length;
+
 	length = 0;
 	if (n < 0)
 	{
@@ -35,7 +35,6 @@ static int ft_count_len(int n)
 		n /= 10;
 		length++;
 	}
-	
 	return (length);
 }
 
