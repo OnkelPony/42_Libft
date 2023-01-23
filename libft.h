@@ -6,18 +6,18 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:01:56 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/23 14:14:22 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:27:47 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <errno.h>
+# include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# include <limits.h>
-# include <errno.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -34,6 +34,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *src);
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
