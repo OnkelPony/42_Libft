@@ -8,7 +8,10 @@
 		"ft_split.C": "cpp",
 		"array": "c",
 		"string_view": "c",
-		"initializer_list": "c"
+		"initializer_list": "c",
+		"errno.h": "c",
+		"features.h": "c",
+		"error_t.h": "c"
 	},
 	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
 	"makefile.launchConfigurations": [

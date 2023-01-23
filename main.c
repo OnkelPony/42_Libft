@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:12:58 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/21 17:23:22 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:41:26 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,6 @@ int main()
 	//ft_strlcat
 	printf("*** ft_strlcat ***\n");
 	//char    *dest;
-
 	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
 			return (0);
 	memset(dest, 0, 15);
@@ -132,6 +131,12 @@ int main()
 	write(1, dest, 15);
 	printf("\n");
 
+	//ft_calloc
+	printf("*** ft_calloc ***\n");
+	char *str;
+	str = (char *)ft_calloc(30, 1);
+	write(1, str, 30);
+	
 	return 0;
 
 }
