@@ -11,7 +11,8 @@
 		"initializer_list": "c",
 		"errno.h": "c",
 		"features.h": "c",
-		"error_t.h": "c"
+		"error_t.h": "c",
+		"ft_my_split.C": "cpp"
 	},
 	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
 	"makefile.launchConfigurations": [

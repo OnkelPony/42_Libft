@@ -6,12 +6,13 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:01:56 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/26 13:43:54 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:27:21 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <ctype.h>
 # include <errno.h>
 # include <limits.h>
 # include <stdbool.h>
