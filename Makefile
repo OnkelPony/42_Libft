@@ -6,11 +6,11 @@
 #    By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:16:40 by jimartin          #+#    #+#              #
-#    Updated: 2023/01/30 18:05:27 by jimartin         ###   ########.fr        #
+#    Updated: 2023/01/30 18:15:16 by jimartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CCC = gcc
+CCC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 OBJNAME = libft.o
@@ -21,7 +21,7 @@ ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o \
 ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o \
 ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o \
 ft_toupper.o
-BONUS_OBJFILES = ft_lstnew.o
+BONUS_OBJFILES = ft_lstnew.o ft_lstadd_front.o
 
 # REMOVE THIS!!!
 bin: re main.c
