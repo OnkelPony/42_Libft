@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:04:51 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/01 15:10:12 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/01 17:40:20 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,20 @@ NULL if the allocation fails.
 */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	t_list *result;
 
+	result = malloc(sizeof(*result));
+	while (lst)
+	{
+		result->content = f(lst->content);
+		result->next = malloc(sizeof(*result));
+		if (result->next == NULL)
+		{
+			del(result->content);
+			return (result);
+		}
+		result = result->next;
+		lst = lst->next;
+	}
+	return (result);
 }
