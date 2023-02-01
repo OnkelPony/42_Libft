@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:01:56 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/31 17:45:33 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:50:48 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);

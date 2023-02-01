@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 17:43:54 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/01 14:47:18 by jimartin         ###   ########.fr       */
+/*   Created: 2023/02/01 14:51:02 by jimartin          #+#    #+#             */
+/*   Updated: 2023/02/01 14:56:34 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Deletes and frees the given node and every
-successor of that node, using the function ’del’
-and	free(3).
-Finally, the pointer to the list must be set to
-NULL.
+Iterates the list ’lst’ and applies the function
+’f’ on the content of each node.
 lst: The address of a pointer to a node.
-del: The address of the function used to delete
-the content of the node.
-*/
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+f: The address of the function used to iterate on
+the list.*/
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*node_next;
-
-	while (*lst)
+	while (lst)
 	{
-		node_next = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = node_next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }
