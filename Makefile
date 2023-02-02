@@ -6,11 +6,11 @@
 #    By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:16:40 by jimartin          #+#    #+#              #
-#    Updated: 2023/02/01 15:06:04 by jimartin         ###   ########.fr        #
+#    Updated: 2023/02/02 19:17:04 by jimartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CCC = cc
+CCC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 OBJNAME = libft.o
@@ -25,8 +25,12 @@ BONUS_OBJFILES = ft_lstadd_back.o ft_lstadd_front.o ft_lstclear.o \
 ft_lstdelone.o ft_lstiter.o ft_lstlast.o ft_lstmap.o ft_lstnew.o ft_lstsize.o
 
 # REMOVE THIS!!!
-bin: re main.c
-	$(CC) $(CFLAGS) -o main main.c -L. -lft
+# bin: re main.c
+# 	$(CC) $(CFLAGS) -o main main.c -L. -lft
+
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
+# 	cc -nostartfiles -shared -o libft.so $(OBJ)
 # REMOVE THIS!!!
 
 all: $(NAME)

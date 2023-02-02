@@ -6,10 +6,9 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 13:47:52 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/02 13:48:46 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/02 18:09:31 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -26,20 +25,28 @@ NULL if the allocation fails.
 */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *result;
+	t_list	*new;
+	t_list	*head;
+	t_list	*tail;
 
-	result = malloc(sizeof(*result));
+	if (!lst || !f || !del)
+		return (NULL);
+	head = NULL;
+	if (!(new = ft_lstnew(f(lst->content))))
+		return (NULL);
+	ft_lstadd_back(&head, new);
+	tail = head;
+	lst = lst->next;
 	while (lst)
 	{
-		result->content = f(lst->content);
-		result->next = malloc(sizeof(*result));
-		if (result->next == NULL)
+		if (!(new = ft_lstnew(f(lst->content))))
 		{
-			del(result->content);
-			return (result);
+			ft_lstclear(&head, del);
+			return (NULL);
 		}
-		result = result->next;
+		ft_lstadd_back(&tail, new);
+		tail = tail->next;
 		lst = lst->next;
 	}
-	return (result);
+	return (head);
 }
