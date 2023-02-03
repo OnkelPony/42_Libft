@@ -6,11 +6,28 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:56:59 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/23 19:06:41 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:38:09 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	ft_count_len(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+	{
+		++len;
+	}
+	while (n != 0)
+	{
+		++len;
+		n = n / 10;
+	}
+	return (len);
+}
 
 static int	ft_abs(int n)
 {
@@ -21,46 +38,23 @@ static int	ft_abs(int n)
 	return (n);
 }
 
-static int	ft_count_len(int n)
-{
-	int	length;
-
-	length = 0;
-	if (n < 0)
-	{
-		length++;
-	}
-	while (n != 0)
-	{
-		n /= 10;
-		length++;
-	}
-	return (length);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*result;
-	int		length;
-	bool	negative;
+	int		len;
 
-	negative = false;
-	if (n == 0)
-		return ("0");
+	len = ft_count_len(n);
+	result = malloc(sizeof(char) * (len + 1));
+	result[len] = '\0';
 	if (n < 0)
-		negative = true;
-	length = ft_count_len(n);
-	result = malloc(length + 1);
-	result[length] = '\0';
-	while (length)
-	{
-		length--;
-		result[length] = '0' + (ft_abs(n % 10));
-		n /= 10;
-	}
-	if (negative)
-	{
 		result[0] = '-';
+	else if (n == 0)
+		result[0] = '0';
+	while (n != 0)
+	{
+		--len;
+		result[len] = ft_abs(n % 10) + '0';
+		n = n / 10;
 	}
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:09:50 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/23 14:20:59 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/03 14:15:47 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*result;
-	size_t	total;
 
-	total = nmemb * size;
-	if (total > INT_MAX)
+	if (nmemb >= INT_MAX || size >= INT_MAX)
 	{
-		exit(136);
+		return (0);
 	}
-	result = malloc(total);
+	result = malloc(nmemb * size);
 	if (result == NULL)
 	{
 		return (result);
 	}
-	ft_bzero(result, total);
+	ft_bzero(result, nmemb * size);
 	return (result);
 }

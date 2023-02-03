@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 13:47:52 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/02 18:09:31 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/03 15:18:50 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,24 @@ NULL if the allocation fails.
 */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*head;
-	t_list	*tail;
+	t_list	*result;
+	t_list	*node;
 
-	if (!lst || !f || !del)
+	if (!lst || !f)
+	{
 		return (NULL);
-	head = NULL;
-	if (!(new = ft_lstnew(f(lst->content))))
-		return (NULL);
-	ft_lstadd_back(&head, new);
-	tail = head;
-	lst = lst->next;
+	}
+	result = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew(f(lst->content))))
+		node = ft_lstnew((*f)(lst->content));
+		if (!node)
 		{
-			ft_lstclear(&head, del);
+			ft_lstclear(&result, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&tail, new);
-		tail = tail->next;
+		ft_lstadd_back(&result, node);
 		lst = lst->next;
 	}
-	return (head);
+	return (result);
 }

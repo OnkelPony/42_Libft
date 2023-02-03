@@ -6,30 +6,37 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:21:17 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 16:41:45 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:27:59 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+/*
+Allocates (with malloc(3)) and returns a substring
+from the string ’s’.
+The substring begins at index ’start’ and is of
+maximum size ’len’.
+s: The string from which to create the substring.
+start: The start index of the substring in the
+string ’s’.
+len: The maximum length of the substring.
+Return: The substring.
+NULL if the allocation fails.
+*/
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	char	*substr;
-	char	*p_substr;
-	size_t	i;
+	char	*result;
 
-	s += start;
-	p_substr = malloc(sizeof(*p_substr) * (len + 1));
-	if (p_substr == NULL)
-	{
+	if (!s)
+		return (0);
+	if (ft_strlen(s) < start)
+		len = 0;
+	if (ft_strlen(s + start) <= len)
+		len = ft_strlen(s + start);
+	result = malloc(sizeof(*result) * (len + 1));
+	if (!result)
 		return (NULL);
-	}
-	substr = p_substr;
-	i = 0;
-	while (*s && ++i <= len)
-	{
-		*p_substr++ = *s++;
-	}
-	*p_substr = '\0';
-	return (substr);
+	ft_strlcpy(result, s + start, len + 1);
+	return (result);
 }
