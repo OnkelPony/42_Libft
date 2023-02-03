@@ -6,34 +6,22 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:02:05 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/17 12:50:18 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/03 16:54:39 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	abs_c(char c)
-{
-	if (c < 0)
-	{
-		return ((int) -c);
-	}
-	return (c);
-}
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	if (n == 0)
+	while (i < n && (s1[i] || s2[i]))
 	{
-		return (0);
+		if (s1[i] != s2[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		i++;
 	}
-	while (*s1 == *s2 && ++i < n)
-	{
-		s1++;
-		s2++;
-	}
-	return (abs_c(*s1) - abs_c(*s2));
+	return (0);
 }
