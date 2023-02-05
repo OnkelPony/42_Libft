@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:48:46 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/03 14:16:52 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/05 18:23:55 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int				i;
-	unsigned char	u_c;
+	int		i;
+	char	c_c;
 
-	u_c = (unsigned char)c;
+	c_c = (char)c;
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
-		if (s[i] == u_c)
+		if (s[i] == c_c)
 			return ((char *)s + i);
 		i--;
 	}
