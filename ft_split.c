@@ -6,16 +6,13 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 18:36:13 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/30 17:10:42 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/05 19:26:11 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-Counts "words" - strings between separators.
-*/
-static size_t	count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
 	size_t	word_count;
 	size_t	i;
@@ -42,19 +39,17 @@ static size_t	count_words(char const *s, char c)
 	return (word_count);
 }
 
-static size_t	count_letters(char const *s, char c, size_t *i)
+static int	ft_count_letters(char const *s, char c, int i)
 {
-	size_t	letter_count;
+	int	size;
 
-	letter_count = 0;
-	while (s[*i] == c)
-		(*i)++;
-	while (s[*i] && s[*i] != c)
+	size = 0;
+	while (s[i] != c && s[i])
 	{
-		letter_count++;
-		(*i)++;
+		size++;
+		i++;
 	}
-	return (letter_count);
+	return (size);
 }
 
 static char	**ft_free(char **p_splitted)
@@ -70,41 +65,31 @@ static char	**ft_free(char **p_splitted)
 	return (0);
 }
 
-static char	**split_words(char const *s, char c, size_t word_count)
+char		**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	letter_count;
-	char	**splitted;
-	char	**p_splitted;
+	int		i;
+	int		word;
+	char	**strs;
+	int		size;
+	int		j;
 
 	i = 0;
-	splitted = malloc(sizeof(*splitted) * (word_count + 1));
-	if (splitted == 0)
-		return (0);
-	p_splitted = splitted;
-	while (word_count--)
+	j = -1;
+	word = ft_count_words(s, c);
+	if (!(strs = malloc((word + 1) * sizeof(*strs))))
+		return (NULL);
+	while (++j < word)
 	{
-		letter_count = count_letters(s, c, &i);
-		*splitted = malloc(letter_count + 1);
-		if (*splitted == 0)
-			return (ft_free(p_splitted));
-		ft_memcpy(*splitted, &s[i - letter_count], letter_count);
-		(*splitted++)[letter_count] = '\0';
+		while (s[i] == c)
+			i++;
+		size = ft_count_letters(s, c, i);
+		if (!(strs[j] = ft_substr(s, i, size)))
+		{
+			ft_free(strs);
+			return (NULL);
+		}
+		i += size;
 	}
-	return (p_splitted);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**splitted;
-	size_t	word_count;
-
-	if (s == 0)
-	{
-		return (0);
-	}
-	word_count = count_words(s, c);
-	splitted = split_words(s, c, word_count);
-	splitted[word_count] = NULL;
-	return (splitted);
+	strs[j] = 0;
+	return (strs);
 }
