@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 18:36:13 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/05 19:26:11 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/05 21:43:26 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,13 @@ static size_t	ft_count_words(char const *s, char c)
 
 	word_count = 0;
 	i = 0;
-	if (!s || *s == '\0')
+	if (!s || !*s)
 	{
 		return (word_count);
 	}
-	if (s[i] != c)
-	{
-		word_count++;
-		i++;
-	}
 	while (s[i])
 	{
-		if (s[i] != c && s[i - 1] == c)
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 		{
 			word_count++;
 		}
@@ -65,7 +60,7 @@ static char	**ft_free(char **p_splitted)
 	return (0);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		word;
@@ -76,18 +71,17 @@ char		**ft_split(char const *s, char c)
 	i = 0;
 	j = -1;
 	word = ft_count_words(s, c);
-	if (!(strs = malloc((word + 1) * sizeof(*strs))))
+	strs = malloc((word + 1) * sizeof(*strs));
+	if (!strs)
 		return (NULL);
 	while (++j < word)
 	{
 		while (s[i] == c)
 			i++;
 		size = ft_count_letters(s, c, i);
-		if (!(strs[j] = ft_substr(s, i, size)))
-		{
-			ft_free(strs);
-			return (NULL);
-		}
+		strs[j] = ft_substr(s, i, size);
+		if (!(strs[j]))
+			return (ft_free(strs));
 		i += size;
 	}
 	strs[j] = 0;
