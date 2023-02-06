@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 15:06:02 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/05 17:22:10 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:48:19 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	i = 0;
 	if (size == 0)
 		return (ft_strlen(src));
-	while (src[i] && i < (size - 1))
+	while (i < (size - 1) && src[i])
 	{
 		dest[i] = src[i];
 		i++;

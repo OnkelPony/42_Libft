@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:21:17 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/03 12:27:59 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:26:40 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,23 @@ NULL if the allocation fails.
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*result;
+	size_t    i;
 
-	if (!s)
+    i = 0;
+	if (!s || start < 0)
 		return (0);
 	if (ft_strlen(s) < start)
 		len = 0;
-	if (ft_strlen(s + start) <= len)
-		len = ft_strlen(s + start);
+	else if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
 	result = malloc(sizeof(*result) * (len + 1));
 	if (!result)
 		return (NULL);
-	ft_strlcpy(result, s + start, len + 1);
+	while (i < len)
+	{
+		result[i] = s[start + i];
+		i++;
+	}
+	result[i] = '\0';
 	return (result);
 }
