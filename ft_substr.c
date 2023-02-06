@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:21:17 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/06 16:26:40 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:11:34 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ NULL if the allocation fails.
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*result;
-	size_t    i;
+	size_t	i;
 
-    i = 0;
+	i = 0;
 	if (!s || start < 0)
 		return (0);
 	if (ft_strlen(s) < start)

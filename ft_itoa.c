@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 14:56:59 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/03 14:38:09 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:12:26 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_count_len(int n)
 	while (n != 0)
 	{
 		++len;
-		n = n / 10;
+		n /= 10;
 	}
 	return (len);
 }
@@ -45,6 +45,8 @@ char	*ft_itoa(int n)
 
 	len = ft_count_len(n);
 	result = malloc(sizeof(char) * (len + 1));
+	if (!result)
+		return (NULL);
 	result[len] = '\0';
 	if (n < 0)
 		result[0] = '-';
@@ -52,9 +54,9 @@ char	*ft_itoa(int n)
 		result[0] = '0';
 	while (n != 0)
 	{
-		--len;
+		len--;
 		result[len] = ft_abs(n % 10) + '0';
-		n = n / 10;
+		n /= 10;
 	}
 	return (result);
 }

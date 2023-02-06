@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 17:41:49 by jimartin          #+#    #+#             */
-/*   Updated: 2023/01/31 16:55:15 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:48:58 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	result = malloc(sizeof(*result) * (ft_strlen(s) + 1));
+	if (!result)
+		return (NULL);
 	p_result = result;
 	while (*s)
 	{
