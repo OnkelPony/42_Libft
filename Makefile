@@ -6,7 +6,7 @@
 #    By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:16:40 by jimartin          #+#    #+#              #
-#    Updated: 2023/02/02 19:17:04 by jimartin         ###   ########.fr        #
+#    Updated: 2023/02/06 18:10:44 by jimartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,15 +24,6 @@ ft_toupper.o
 BONUS_OBJFILES = ft_lstadd_back.o ft_lstadd_front.o ft_lstclear.o \
 ft_lstdelone.o ft_lstiter.o ft_lstlast.o ft_lstmap.o ft_lstnew.o ft_lstsize.o
 
-# REMOVE THIS!!!
-# bin: re main.c
-# 	$(CC) $(CFLAGS) -o main main.c -L. -lft
-
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-# 	cc -nostartfiles -shared -o libft.so $(OBJ)
-# REMOVE THIS!!!
-
 all: $(NAME)
 
 $(NAME): $(OBJFILES) libft.h
@@ -41,7 +32,6 @@ $(NAME): $(OBJFILES) libft.h
 bonus: $(NAME) $(BONUS_OBJFILES)
 	ar rc libft.a $(BONUS_OBJFILES)
 
-# Define a pattern rule that compiles every .c file into a .o file
 %.o : %.c
 	$(CC) -c $(CFLAGS)  $< -o $@
 
