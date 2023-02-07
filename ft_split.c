@@ -6,7 +6,7 @@
 /*   By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 18:36:13 by jimartin          #+#    #+#             */
-/*   Updated: 2023/02/05 21:43:26 by jimartin         ###   ########.fr       */
+/*   Updated: 2023/02/07 11:58:27 by jimartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,30 +60,41 @@ static char	**ft_free(char **p_splitted)
 	return (0);
 }
 
+/*
+Allocates (with malloc(3)) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter. The array must end
+with a NULL pointer.
+s: The string to be split.
+c: The delimiter character.
+Return: The array of new strings resulting from the split.
+NULL if the allocation fails.
+*/
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		word;
-	char	**strs;
-	int		size;
 	int		j;
+	int		words;
+	int		letters;
+	char	**result;
 
 	i = 0;
-	j = -1;
-	word = ft_count_words(s, c);
-	strs = malloc((word + 1) * sizeof(*strs));
-	if (!strs)
+	j = 0;
+	words = ft_count_words(s, c);
+	result = malloc(sizeof(*result) * (words + 1));
+	if (!result)
 		return (NULL);
-	while (++j < word)
+	while (j < words)
 	{
 		while (s[i] == c)
 			i++;
-		size = ft_count_letters(s, c, i);
-		strs[j] = ft_substr(s, i, size);
-		if (!(strs[j]))
-			return (ft_free(strs));
-		i += size;
+		letters = ft_count_letters(s, c, i);
+		result[j] = ft_substr(s, i, letters);
+		if (!(result[j]))
+			return (ft_free(result));
+		i += letters;
+		j++;
 	}
-	strs[j] = 0;
-	return (strs);
+	result[j] = 0;
+	return (result);
 }
