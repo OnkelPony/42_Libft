@@ -6,11 +6,11 @@
 #    By: jimartin <jimartin@student.42prague.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 14:16:40 by jimartin          #+#    #+#              #
-#    Updated: 2023/02/06 18:10:44 by jimartin         ###   ########.fr        #
+#    Updated: 2023/02/15 14:02:23 by jimartin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CCC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 OBJNAME = libft.o
@@ -26,7 +26,7 @@ ft_lstdelone.o ft_lstiter.o ft_lstlast.o ft_lstmap.o ft_lstnew.o ft_lstsize.o
 
 all: $(NAME)
 
-$(NAME): $(OBJFILES) libft.h
+$(NAME): $(OBJFILES) 
 	ar rc libft.a $(OBJFILES)
 
 bonus: $(NAME) $(BONUS_OBJFILES)
